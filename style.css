@@ -76,3 +76,9 @@ span{
     text-align: center;
     font-size: 25px;
 }
+
+#no-input p{
+    text-align: center;
+    font-size: 25px;
+    color: red;
+}

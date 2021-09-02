@@ -1,10 +1,16 @@
 const invalidResult=document.getElementById('no-response');
-const resultNum=document.getElementById('result-no')
+const resultNum=document.getElementById('result-no');
+const noInput=document.getElementById('no-input');
 const getInput=()=>{
     const inputField=document.getElementById('input-field');
     const inputValue=inputField.value;
-    inputField.value='';
-    loadData(inputValue);
+    if(inputField.value===''){
+        noInput.innerHTML=`<p>please add some input<p>`;    
+    }else{
+        noInput.textContent='';
+        inputField.value='';
+        loadData(inputValue);
+    }
 }
 
 const loadData=(searchText)=>{
@@ -22,8 +28,8 @@ const showData=(details)=>{
 
     contentArea.textContent='';
 
-    if(details.docs.slice(0,30)[0]=== null){
-         invalidResult.innerHTML=`<p>Nothing Found</p>`;
+    if(details.docs.slice(0,30)[0]== null){
+         invalidResult.innerHTML=`<p> Nothing Found </p>`;
          resultNum.innerHTML='';
     }else{
        invalidResult.innerText='';
