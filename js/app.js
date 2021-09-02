@@ -22,7 +22,7 @@ const showData=(details)=>{
 
     contentArea.textContent='';
 
-    if(details.docs.slice(0,30)[0]==null){
+    if(details.docs.slice(0,30)[0]=== null){
          invalidResult.innerHTML=`<p>Nothing Found</p>`;
          resultNum.innerHTML='';
     }else{
@@ -35,7 +35,7 @@ const showData=(details)=>{
         div.innerHTML=`
           <img src='https://covers.openlibrary.org/b/id/${element.cover_i}-M.jpg' <br>
           <div id='desc'>
-          <p>title: ${element.title}</p>
+          <p>Book Name: ${element.title}</p>
           <p>author: ${element.author_name?.slice(0,1)}</p>
           <p>Publish Date: ${element.publish_year}</p>
           <p>Publisher: ${element.publisher?.slice(0,1)}</p>
